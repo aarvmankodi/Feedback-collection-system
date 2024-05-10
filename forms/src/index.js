@@ -9,6 +9,8 @@ root.render(
   <React.StrictMode>
     <div className='gradient'></div>
     <App />
+    
+    
   </React.StrictMode>
 );
 

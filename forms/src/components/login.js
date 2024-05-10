@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './middle.css';
+import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser , faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
@@ -29,20 +29,19 @@ function Login() {
     e.preventDefault();
 
     if (action === 'Login'){
-      // try {
-      //   const response = await axios.post('http://localhost:3001/login', formData);
-      //   if (response.status === 200) {
-      //     // If login is successful, display a success message to the user
-      //     navigate("/submit");
-      //     // You can redirect the user to another page here if needed
-      //   } else {
-      //     alert('User not Found');
-      //   }
-      // } catch (error) {
-      //   console.error('Error during login:', error);
-      //   alert('Error while loggin in');
-      // }
-      navigate('/submit');
+      try {
+        const response = await axios.post('http://localhost:3001/login', formData);
+        if (response.status === 200) {
+          // If login is successful, display a success message to the user
+          navigate("/forms");
+          // You can redirect the user to another page here if needed
+        } else {
+          alert('User not Found');
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        alert('Error while loggin in');
+      }
     }
     
     else if (action === 'SignUp'){
