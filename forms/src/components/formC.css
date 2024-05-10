@@ -1,0 +1,60 @@
+*{
+    font-weight: 600;
+}
+
+.formC{
+    height:130vh;
+    width : 99vw;
+    border-radius: 10px;
+    padding-left:25%;
+    box-shadow: 2px;
+    
+}
+
+#form-feedback{
+    width : 90%;
+    height : 50%;
+    margin-left : 3%;
+    resize:none;
+    border : none;
+    border-bottom : 2px solid teal;
+}
+
+.rate-radio{
+    margin-right : 60vw;
+}
+
+
+@media screen and (max-width : 800px) {
+    .underline{
+
+        margin-left : 42%;
+    }
+    .formC{
+        padding: 0px;
+        height : 110vh;
+    }
+    #form{
+        width : 100vw;
+        margin-left:2.5%;
+        padding: 0px;
+    }
+    .head , .form
+    {
+        
+        width : 95%;
+    }
+    .work{
+        margin-right : 60vw;
+        margin-left : 1%;
+    }
+
+   #reset{
+    background-color: rgba(0,128,128,0.2);
+    margin-right:5%;
+   }
+}
+
+
+
+
