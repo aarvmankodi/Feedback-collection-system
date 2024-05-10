@@ -1,0 +1,105 @@
+* {
+    font-weight: 600;
+}
+.formB{
+    height:175vh;
+    width : 100vw;
+    border-radius: 10px;
+    padding-left:25%;
+    padding-top: 0px;
+    
+}
+
+.form
+{
+    margin-top : 2%;
+    margin-bottom: 0%;
+    height : 20vh;
+    border : 2px solid black;
+    width : 100%;
+    background-color: rgb(254,254,254);
+    border-radius: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap : 0px;
+    font-size: 20px;   
+}
+
+#email-form{
+    margin-left : 1%;
+    width : 50%;
+    border-bottom : 2px solid teal;
+}
+
+#dob-form{
+    margin-left : 1%;
+    width : 50%;
+    border-bottom : 2px solid teal;
+}
+
+#address-form{
+    margin-left : 1%;
+    width : 50%;
+    border-bottom : 2px solid teal;
+}
+#file-form{
+    margin-left : 1%;
+    width : 50%;
+    border-bottom : 2px solid teal;
+    border : none;
+}
+
+.work{
+    margin-right: 40vw;
+}
+
+.form-radio{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#form-file{
+    margin-left : 1%;
+    border-bottom : 2px solid teal; 
+    
+}
+
+.underline{
+
+    margin-left : 47%;
+}
+
+@media screen and (max-width : 800px) {
+    .underline{
+
+        margin-left : 42%;
+    }
+    .formB{
+        padding: 0px;
+        height : 150vh;
+    }
+    #form{
+        width : 100vw;
+        margin-left:2.5%;
+        padding: 0px;
+    }
+    .head , .form
+    {
+        
+        width : 95%;
+    }
+    .work{
+        margin-right : 60vw;
+        margin-left : 1%;
+    }
+
+   #reset{
+    background-color: rgba(0,128,128,0.2);
+    margin-right:5%;
+   }
+}
+
+

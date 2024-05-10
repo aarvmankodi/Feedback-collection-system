@@ -1,0 +1,184 @@
+* {
+    font-weight: 600;
+}
+
+.formA{
+    height:100vh;
+    width : 100vw;
+    border-radius: 10px;
+    padding-left:25%;
+    overflow: hidden;
+    
+   
+}
+
+#form{
+    height : 95vh;
+    width : 50vw;
+
+
+    margin : 0px;
+    padding : 0px;
+    
+}
+.head
+{
+    margin-top: 0%;
+    height : 10vh;
+    /* border : 2px solid black; */
+    width : 50vw;
+    color : teal;
+    /* background-color: rgb(254,254,254); */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap : 0px;
+    font-size: 30px; 
+    margin-bottom : 0%; 
+    font-weight: 600;
+}
+.rating 
+{
+    margin-top : 2%;
+    margin-bottom: 0%;
+    height : 20vh;
+    border : 2px solid black;
+    width : 100%;
+    background-color: rgb(254,254,254);
+    border-radius: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap : 0px;
+    font-size: 20px;     
+}   
+span
+{
+    height: 50%;
+    width: 10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.radio{
+    margin:0px;
+    padding:0px;
+
+}
+
+.txt 
+{
+    margin-left: 1%;
+    
+    margin-right : 30vw;
+}
+
+#name-form{
+    margin-left : 1%;
+    width : 50%;
+    border-bottom : 2px solid teal;
+}
+
+
+
+#submit
+{
+    margin-top: 3%;
+    margin-left: 0px;   
+    width : 150px;
+    height : 60px;
+    
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,128,128,0.8);
+    border : none;
+    color : white;
+    font-weight: bold;
+    border-radius: 80px;
+    transition : all 0.3s ease;
+    opacity : 1;
+    cursor : pointer;
+    font-size: 20px;
+}
+
+#reset
+{
+    margin-top: 3%;
+    width : 150px;
+    height : 60px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,128,128,0);
+    color: rgb(0,128,128);
+    border : none;
+    font-weight: bold;
+    border-radius: 80px;
+    transition : all 0.3s ease;
+    opacity : 1;
+    cursor : pointer;
+    font-size: 20px;
+    
+
+}
+
+#submit:hover 
+{
+    background-color:  rgba(0,128,128,0.7);
+}
+
+#reset:hover{
+    background-color: rgba(0,128,128,0.2);
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.underline{
+
+    width : 50px;
+    height : 10px;
+    background-color: teal;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-left : 47%;
+}
+
+@media screen and (max-width : 800px) {
+    .formA{
+        padding: 0px;
+    }
+    #form{
+        width : 100vw;
+        margin-left:2.5%;
+        padding: 0px;
+    }
+    .head , .rating , .name-form
+    {
+        
+        width : 95%;
+    }
+    .txt{
+        margin-right : 40vw;
+    }
+
+   #reset{
+    background-color: rgba(0,128,128,0.2);
+    margin-right:5%;
+   }
+   .underline{
+    margin-left:42%;
+   }
+}
+
+
+  
