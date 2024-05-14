@@ -16,7 +16,7 @@ function App() {
     <Header/>
 
       <Routes>
-        <Route path="/" element={<Login className="container"/>} />
+        <Route path="/" element={<Login/>} />
         <Route path="/forms" element={<Forms />} />
         <Route path="/formA" element={<FormA />} />
         <Route path="/formB" element={<FormB />} />

@@ -19,11 +19,7 @@ function Login() {
     }));
   };
 
-  const handleReset = (e) => {  
-    setFormData( ()=> ({
-        [e.target.name] : ''
-    }))
-}
+  
 
   const handleLogin  = async (e) => {
     e.preventDefault();
@@ -37,10 +33,12 @@ function Login() {
           // You can redirect the user to another page here if needed
         } else {
           alert('User not Found');
+          window.location.reload();
         }
       } catch (error) {
         console.error('Error during login:', error);
         alert('Error while loggin in');
+        window.location.reload();
       }
     }
     
@@ -64,11 +62,13 @@ function Login() {
         try {
 
           await axios.post('http://localhost:3001/user-forms', formData);
-          alert('Form submitted successfully');
+          alert('New User Added');
+          window.location.reload();
           
         } catch (error) {
           console.error('Error submitting form:', error);
           alert('Failed to submit form');
+          window.location.reload();
         }
       } else {
         alert("Ensure both passwords are same");
