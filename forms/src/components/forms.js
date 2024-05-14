@@ -1,12 +1,37 @@
 import React , { useEffect} from 'react';
-import './forms.css';
 import { useNavigate } from 'react-router-dom';
+import './forms.css';
 
 function Forms() {
   const navigate = useNavigate();
   
   useEffect(() => {
+    // Check if loginStatus cookie exists and its value is "success"
+    const loginStatus = getCookie("loginStatus");
+    if (loginStatus !== "success") {
+      // Redirect to login page if loginStatus is not "success"
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const getCookie = (name) => {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split('=');
+      if (cookieName.trim() === name) {
+        return cookieValue;
+      }
+    }
+    return "";
+  };
+
+  useEffect(() => {
     // Function to handle mousemove event
+    
+  
+   
+
+    
     const handleMousemove = (e) => {
       const { currentTarget: target } = e;
       const rect = target.getBoundingClientRect();

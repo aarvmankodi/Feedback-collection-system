@@ -7,16 +7,19 @@ import FormD from './components/formD';
 import Login from './components/login';
 import Forms from './components/forms';
 import Header from './components/header';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import SignUp from './components/signup';
 
 function App() {
   return (
     <>
-    
     <Router>
     <Header/>
 
       <Routes>
         <Route path="/" element={<Login/>} />
+        <Route path="/signUp" element={<SignUp/>} />
         <Route path="/forms" element={<Forms />} />
         <Route path="/formA" element={<FormA />} />
         <Route path="/formB" element={<FormB />} />
@@ -24,9 +27,13 @@ function App() {
         <Route path="/formD" element={<FormD />} />
         
       </Routes>
+      <ToastContainer/>
     </Router>
+    
     </>
   );
 }
 
 export default App;
+
+

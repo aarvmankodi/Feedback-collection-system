@@ -4,6 +4,9 @@ import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser , faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'; 
+
+
 
 function Login() {
   const [formData, setFormData] = useState({form:'Account' ,name: '', email: '', password: ''});
@@ -19,62 +22,39 @@ function Login() {
     }));
   };
 
+
+
   
 
   const handleLogin  = async (e) => {
     e.preventDefault();
-
+    document.cookie = "loginStatus=failed; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
     if (action === 'Login'){
       try {
         const response = await axios.post('http://localhost:3001/login', formData);
         if (response.status === 200) {
           // If login is successful, display a success message to the user
+          document.cookie = "loginStatus=success; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
           navigate("/forms");
           // You can redirect the user to another page here if needed
         } else {
-          alert('User not Found');
-          window.location.reload();
+          toast.error('User not Found');
         }
       } catch (error) {
         console.error('Error during login:', error);
-        alert('Error while loggin in');
-        window.location.reload();
+        toast.error('Error while loggin in');
       }
     }
     
-    else if (action === 'SignUp'){
-      setAction("Login")
-      
-    }
+    
   };
   const handleSignUp = async (e) => {
     
     
     e.preventDefault();
     if (action === 'Login'){
-      setAction("SignUp")
+      navigate("/signUp");
     }
-    
-    else if (action==='SignUp'){
-      let password1 = document.getElementById('pass1').value;
-    let password2 = document.getElementById('pass2').value;
-      if (password1 === password2 && password1!== ''){
-        try {
-
-          await axios.post('http://localhost:3001/user-forms', formData);
-          alert('New User Added');
-          window.location.reload();
-          
-        } catch (error) {
-          console.error('Error submitting form:', error);
-          alert('Failed to submit form');
-          window.location.reload();
-        }
-      } else {
-        alert("Ensure both passwords are same");
-      }
-      
-    } 
   };
   
   return (

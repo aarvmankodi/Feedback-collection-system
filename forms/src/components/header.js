@@ -18,6 +18,7 @@ function Header() {
     };  
     const logOut = () => {
         Navigate("/");
+        document.cookie = "loginStatus=failed; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
         setMenuOpen('close');
     }
 
