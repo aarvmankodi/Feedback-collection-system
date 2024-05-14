@@ -10,6 +10,7 @@ import Header from './components/header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './components/signup';
+import Landing from './components/landing';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
     <Header/>
 
       <Routes>
-        <Route path="/" element={<Login/>} />
+        <Route path="/" element={<Landing/>} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/signUp" element={<SignUp/>} />
         <Route path="/forms" element={<Forms />} />
         <Route path="/formA" element={<FormA />} />

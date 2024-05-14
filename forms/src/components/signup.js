@@ -32,7 +32,7 @@ function SignUp() {
    
     
      if (action === 'SignUp'){
-      navigate("/");
+      navigate("/login");
 
       
     }
@@ -41,7 +41,7 @@ function SignUp() {
     
     
     e.preventDefault();
-    
+        
     
      if (action==='SignUp'){
       let password1 = document.getElementById('pass1').value;
@@ -91,8 +91,8 @@ function SignUp() {
       </div>}
       
       <div className='submit'>
-        <div className={action==='Login'?'sub':'sub grey'} onClick={handleLogin}>Log In</div>
-        <div className={action==='Login'?'sub grey':'sub'} onClick={handleSignUp}>Sign Up</div>
+        <div className='sub grey' onClick={handleLogin}>Log In</div>
+        <div className='sub ' onClick={handleSignUp}>Sign Up</div>
       </div>
       </div>
       
