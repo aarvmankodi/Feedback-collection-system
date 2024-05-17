@@ -81,12 +81,12 @@ body
     position: absolute; 
     top : 0px;
     width : 100%;
-    z-index: 2;
+    z-index: 0;
 
 }
 .form-option h3 {
     position: relative; 
-    z-index: 2; 
+    z-index: 0; 
 }
 
 
@@ -94,7 +94,7 @@ body
 
 
 
-@media screen and (max-width : 800px)
+@media screen and (max-width : 500px)
 {
     .forms
     {

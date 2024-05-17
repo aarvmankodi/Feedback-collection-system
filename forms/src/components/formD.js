@@ -1,7 +1,30 @@
-import React , {useState}from 'react';
+import React , { useEffect , useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './formD.css';
+import { toast } from 'react-toastify'; 
+
 function FormD() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    // Check if loginStatus cookie exists and its value is "success"
+    const loginStatus = getCookie("loginStatus");
+    if (loginStatus !== "success") {
+      // Redirect to login page if loginStatus is not "success"
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const getCookie = (name) => {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split('=');
+      if (cookieName.trim() === name) {
+        return cookieValue;
+      }
+    }
+    return "";
+  };
 
     const [formData, setFormData] = useState({form:'D' ,name: '', email: '', rating: '', rating2: '', rating3: '',reference: '', recommend: '', feedback: '' });
 
@@ -26,12 +49,13 @@ function FormD() {
         try {
           // Send POST request to backend API endpoint
           await axios.post('http://localhost:3001/user-forms', formData);
-          alert('Form submitted successfully');
+          // toast.success('Form submitted successfully');
+          toast.success('Form submitted successfully'); // Display success toast
           // Clear form data after submitting
         //   setFormData({ name: '', rating: '' });
         } catch (error) {
           console.error('Error submitting form:', error);
-          alert('Failed to submit form');
+          toast.error('Failed to submit form');
         }
       };
 
