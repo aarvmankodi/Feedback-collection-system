@@ -1,0 +1,61 @@
+.users{
+    height : 100vh;
+    width : 80vw;
+    margin-left: 20vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+
+}
+
+.user-entries{
+    height : auto;
+    width : 79.6vw;
+    display : flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap : 10px;
+    /* overflow: hidden; */
+}
+.table{
+    width : 95%;
+    border : 2px solid black;
+    background-color: aqua;
+    border-radius: 10px;
+    height : auto;
+    padding-top : 20px;
+    padding-bottom: 20px;
+}
+.entry{
+    width : 100%;
+    display: flex;
+    justify-content: space-between; 
+    /* padding-top : 30px;
+    padding-bottom: 20px; */
+    border-radius: 10px;
+    background-color: aqua;
+    margin-bottom : 12px;
+    height : auto;
+    border: 2px solid black;
+}
+
+
+
+table{
+    width : 95%;
+}
+ td{
+    flex: 1;
+    text-align: center;
+    word-wrap: break-word;
+    padding-top : 20px;
+    padding-bottom: 20px;
+} 
+
+table th{
+    width : 70px;
+    text-align: center;
+}
