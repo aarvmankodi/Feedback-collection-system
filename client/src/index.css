@@ -9,7 +9,7 @@ body {
 }
 
 .bg{
-  background: blue;
+  background: rgb(50, 102, 124);
   position : fixed;
   top : 0;
   left : 0;

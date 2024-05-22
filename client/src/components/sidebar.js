@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './sidebar.css';
 import { useNavigate } from 'react-router-dom';
 
-
 function Sidebar() {
     const navigate = useNavigate();
+    const [usersActive, setUsersActive] = useState(false);
 
     const UserRedirect = () => {
         navigate('/users');
+        setUsersActive(true); // Activate the users button
     }
 
     const FormRedirect = () => {
         navigate('/forms');
     }
-    const   HomeRedirect = () => {
+
+    const HomeRedirect = () => {
         navigate('/');
     }
-    return (
-        <div id='sidebar'>
-            <h1>Client Side</h1>
-            <div className='components'  onClick={HomeRedirect}>dashboard</div>
-            <div className='components' onClick={UserRedirect}>users</div>
-            <div className='components' onClick={FormRedirect}>forms</div>
-            
-            <div className='components'>settings</div>
-        </div>
-    )
-}
 
+    return (
+        <div>
+            <div id='sidebar'>
+                <div className={`components ${usersActive ? 'active' : ''}`} onClick={HomeRedirect}>Dashboard</div>
+                <div className={`components ${usersActive ? 'active' : ''}`} onClick={UserRedirect}>Users</div>
+                <div className={`components ${usersActive ? 'active' : ''}`} onClick={FormRedirect}>Forms</div>
+                <div className={`components ${usersActive ? 'active' : ''}`}>Settings</div>
+                <div className={`components ${usersActive ? 'active' : ''}`}>Number of Responses</div>
+            </div>
+        </div>
+    );
+}
 
 export default Sidebar;

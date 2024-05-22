@@ -1,22 +1,77 @@
-#sidebar{
+/* sidebar.css */
+
+#sidebar {
     background-color: black;
-    height : 100vh;
-    width : 20vw;
-    position : fixed;
-    color : white;
+    height: 60px; /* Adjust the height as needed */
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    color: white;
     display: flex;
     align-items: center;
-    flex-direction: column;
-
+    justify-content: space-around;
+    flex-direction: row;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a modern look */
+    z-index: 1000;
 }
 
-.components{
-    height : 40px;
-    width : 90%;
-    background-color: rgb(30,30,30);
-    margin-bottom : 10px;
+.components {
+    height: 40px;
+    padding: 0 20px; /* Adjust the padding for a better look */
+    background-color: rgb(30, 30, 30);
+    margin: 0 10px;
     display: flex;
     align-items: center;
-    padding-left: 10px;
-    border-radius: 10px;
+    justify-content: center;
+    border-radius: 20px; /* More rounded corners for a modern look */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.components:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+.main-content {
+    margin-top: 80px; /* Adjust based on the height of the sidebar */
+    padding: 20px;
+    width: 100%;
+    background-color: #f8f8f8; /* Adjust background color as needed */
+    min-height: calc(100vh - 80px); /* Ensure it takes up the full height of the viewport minus the header */
+}
+
+.responses {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.responses h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.responses table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.responses table, .responses th, .responses td {
+    border: 1px solid #ddd;
+}
+
+.responses th, .responses td {
+    padding: 8px;
+    text-align: left;
+}
+
+.responses th {
+    background-color: #555;
+    color: white;
 }

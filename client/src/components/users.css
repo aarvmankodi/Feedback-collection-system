@@ -1,61 +1,77 @@
-.users{
-    height : 100vh;
-    width : 80vw;
-    margin-left: 20vw;
+.users {
+    width: 100vw;
+    height: 100vh;
+    background-color: #121212;
+    color: #FFFFFF;
     display: flex;
-    justify-content: space-around;
-    align-items: start;
-    flex-wrap: wrap;
-
-}
-
-.user-entries{
-    height : auto;
-    width : 79.6vw;
-    display : flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: start;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    gap : 10px;
-    /* overflow: hidden; */
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
-.table{
-    width : 95%;
-    border : 2px solid black;
-    background-color: aqua;
-    border-radius: 10px;
-    height : auto;
-    padding-top : 20px;
-    padding-bottom: 20px;
+
+.title {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
-.entry{
-    width : 100%;
+
+.user-entries {
+    width: 90%;
+    margin-top: 1rem;
     display: flex;
-    justify-content: space-between; 
-    /* padding-top : 30px;
-    padding-bottom: 20px; */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
     border-radius: 10px;
-    background-color: aqua;
-    margin-bottom : 12px;
-    height : auto;
-    border: 2px solid black;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-
-
-table{
-    width : 95%;
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #3E3E3E;
 }
- td{
-    flex: 1;
-    text-align: center;
-    word-wrap: break-word;
-    padding-top : 20px;
-    padding-bottom: 20px;
-} 
 
-table th{
-    width : 70px;
+.table th {
+    background-color: #181818;
+    color: #7f8682;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #282828;
+}
+
+.table tbody tr:hover {
+    background-color: #383838;
+}
+
+.entry td:last-child {
     text-align: center;
+}
+
+.entry td:last-child button {
+    background-color: #1DB954;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.entry td:last-child button:hover {
+    background-color: #1AA34A;
 }

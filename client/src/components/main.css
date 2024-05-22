@@ -1,53 +1,70 @@
-.main{
-    height : 100vh;
-    width : 80vw;
-    margin-left: 20vw;
-    background-color: blue;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items:start;
-    /* flex-direction: column; */
+/* main.css */
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Use a modern, clean font */
+  background-color: #121212; /* Spotify dark mode background */
+  color: #FFFFFF; /* Default text color in Spotify's dark mode */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
 }
 
-.title{
-    /* background-color: green; */
-    height : 20%;
-    width : 75vw;
-    font-size: 50px;
-    font-weight: 600;
-    display: flex;
-    justify-content: start;
-    padding-left : 20px;
-    align-items: center;
-}
-.user{
-    height : 15%;
-    width : 44%;
-    margin: 0px;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    justify-content: space-between;
-    padding-left: 20px;
-    border: 2px solid black;
-
+.main {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: #181818; /* Dark background color similar to Spotify */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Add padding for better spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
 }
 
-.graph{
-    /* background-color: teal; */
-    width : 77vw;
-    height : 50%;
-    border: 2px solid black;
-
+.title {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 700; /* Slightly heavier font weight */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1DB954; /* Spotify's green color for the title */
+  margin-bottom: 20px; /* Add some margin below the title */
 }
 
-.no{
-    /* background-color: purple; */
-    height : 100%;
-    width : 33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.userno, .activeusers {
+  width: 45%; /* Set width for user boxes */
+  margin: 10px;
+  background-color: #282828; /* Dark user entry background color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 10px 20px; /* Add padding */
+  border: 1px solid #3E3E3E; /* Dark border color */
+  border-radius: 10px; /* Add border radius for a modern look */
+  color: #B3B3B3; /* Subtle text color */
+}
+
+.graph {
+  width: 100%;
+  height: 50%; /* Half the height for the graph section */
+  border: 1px solid #3E3E3E; /* Dark border color */
+  background-color: #282828; /* Dark graph background color */
+  margin-top: 20px; /* Add margin to the top for spacing */
+  border-radius: 10px; /* Add border radius for a modern look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #B3B3B3; /* Subtle text color */
+}
+
+.no {
+  background-color: #3E3E3E; /* Subtle no background color */
+  border: 1px solid #3E3E3E; /* Dark border color */
+  border-radius: 10px; /* Add border radius for a modern look */
+  padding: 5px 10px;
+  color: #FFFFFF; /* White text color for better contrast */
 }
