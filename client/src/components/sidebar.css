@@ -16,6 +16,7 @@
 }
 
 .components {
+    position: relative; /* Required for the ::before pseudo-element */
     height: 40px;
     padding: 0 20px; /* Adjust the padding for a better look */
     background-color: rgb(30, 30, 30);
@@ -25,11 +26,43 @@
     justify-content: center;
     border-radius: 20px; /* More rounded corners for a modern look */
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition effect */
+    overflow: hidden; /* Hide the overflow of the ::before element */
 }
 
-.components:hover {
-    background-color: rgb(50, 50, 50);
+.components::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /* Match the border-radius of the button */
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    animation: border-animation 2s linear infinite; /* Apply the border animation */
+}
+
+@keyframes border-animation {
+    0% {
+        clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+        border-color: #1b5d03;
+    }
+    25% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+        border-color: #1b5d03
+    }
+    50% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+        border-color: #1b5d03;
+    }
+    75% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        border-color: #1b5d03;
+    }
+    100% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        border-color: #1b5d03;
+    }
 }
 
 .main-content {

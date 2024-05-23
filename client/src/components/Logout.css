@@ -1,41 +1,48 @@
 /* src/components/Logout.css */
-body {
-  font-family: 'Arial', sans-serif;
-  background: #121212; /* Dark background */
-  color: #fff; /* White text */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Textured background */
-}
 
 .logout {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the form */
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  width: 300px;
+  position: relative;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #000000; /* Spotify green */
+  color: rgb(22, 139, 11);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #979797;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: rgb(0, 147, 15);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.logout h2 {
+.modal-content h2 {
   margin-bottom: 20px;
-  color: #1DB954; /* Spotify green */
 }
 
-.logout button {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  background: #1DB954; /* Spotify green button */
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.logout button:hover {
-  background: #1ed760; /* Slightly lighter green on hover */
+.modal-content button {
+  margin: 0 10px;
 }
