@@ -10,30 +10,30 @@ import Feedback from './components/feedback';
 import Application from './components/application';
 import Survey from './components/survey';
 
+
+import Login from './components/Login';
+import Logout from './components/Logout'; 
+
 function App() {
-  return (
-    <>
-    <Router>
-    <Sidebar className='sidebar'/>
+    const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
-    <Routes>
-      <Route path="/" element={<Main/>} />
-      <Route path="/users" element={<Users/>} />
-      <Route path='/forms' element={<Forms/>} />
-      <Route path='/forms/rating' element={<Rating/>} />
-      <Route path='/forms/application' element={<Application/>} />
-      <Route path='/forms/feedback' element={<Feedback/>} />
-      <Route path='/forms/survey' element={<Survey/>} />
-      
-
-
-
-    </Routes>
-    </Router>
-    
-    </>
-    
-  );
+    return (
+        <Router>
+            {isAuthenticated && <Sidebar className='sidebar' />}
+            <Routes>
+                <Route path="/" element={isAuthenticated ? <Main /> : <Login />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="/users" element={isAuthenticated ? <Users /> : <Login />} />
+                <Route path="/forms" element={isAuthenticated ? <Forms /> : <Login />} />
+                <Route path="/forms/rating" element={isAuthenticated ? <Rating /> : <Login />} />
+                <Route path="/forms/application" element={isAuthenticated ? <Application /> : <Login />} />
+                <Route path="/forms/feedback" element={isAuthenticated ? <Feedback /> : <Login />} />
+                <Route path="/forms/survey" element={isAuthenticated ? <Survey /> : <Login />} />
+                
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

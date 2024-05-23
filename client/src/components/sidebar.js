@@ -1,35 +1,20 @@
-import React, { useState } from 'react';
-import './sidebar.css';
+// src/components/Sidebar.js
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './sidebar.css';
 
 function Sidebar() {
-    const navigate = useNavigate();
-    const [usersActive, setUsersActive] = useState(false);
+  const navigate = useNavigate();
 
-    const UserRedirect = () => {
-        navigate('/users');
-        setUsersActive(true); // Activate the users button
-    }
-
-    const FormRedirect = () => {
-        navigate('/forms');
-    }
-
-    const HomeRedirect = () => {
-        navigate('/');
-    }
-
-    return (
-        <div>
-            <div id='sidebar'>
-                <div className={`components ${usersActive ? 'active' : ''}`} onClick={HomeRedirect}>Dashboard</div>
-                <div className={`components ${usersActive ? 'active' : ''}`} onClick={UserRedirect}>Users</div>
-                <div className={`components ${usersActive ? 'active' : ''}`} onClick={FormRedirect}>Forms</div>
-                <div className={`components ${usersActive ? 'active' : ''}`}>Settings</div>
-                <div className={`components ${usersActive ? 'active' : ''}`}>Number of Responses</div>
-            </div>
-        </div>
-    );
+  return (
+    <div id='sidebar'>
+      <div className='components' onClick={() => navigate('/')}>Dashboard</div>
+      <div className='components' onClick={() => navigate('/users')}>Users</div>
+      <div className='components' onClick={() => navigate('/forms')}>Forms</div>
+      <div className='components' onClick={() => navigate('/responses')}>Number of Responses</div>
+      <div className='components' onClick={() => navigate('/logout')}>Logout</div>
+    </div>
+  );
 }
 
 export default Sidebar;
