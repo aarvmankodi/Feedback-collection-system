@@ -1,5 +1,5 @@
 // src/components/Logout.js
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Logout.css'; // Import the CSS file
 
@@ -31,4 +31,4 @@ function Logout() {
   );
 }
 
-export default Logout;
+export default Logout;*/

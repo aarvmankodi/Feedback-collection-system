@@ -1,7 +1,7 @@
 /* sidebar.css */
 
 #sidebar {
-    background-color: black;
+    background-color: #121212; /* Spotify dark background color */
     height: 60px; /* Adjust the height as needed */
     width: 100vw;
     position: fixed;
@@ -19,7 +19,7 @@
     position: relative; /* Required for the ::before pseudo-element */
     height: 40px;
     padding: 0 20px; /* Adjust the padding for a better look */
-    background-color: rgb(30, 30, 30);
+    background-color: #121212; /* Spotify dark background color */
     margin: 0 10px;
     display: flex;
     align-items: center;
@@ -27,6 +27,13 @@
     border-radius: 20px; /* More rounded corners for a modern look */
     cursor: pointer;
     overflow: hidden; /* Hide the overflow of the ::before element */
+    color: white; /* Text color */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold text */
+}
+
+.components:hover {
+    background-color: #1db954; /* Spotify green color on hover */
 }
 
 .components::before {
@@ -49,7 +56,7 @@
     }
     25% {
         clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-        border-color: #1b5d03
+        border-color: #1b5d03;
     }
     50% {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
@@ -66,11 +73,11 @@
 }
 
 .main-content {
-    margin-top: 80px; /* Adjust based on the height of the sidebar */
+    margin-top: 60px; /* Adjust based on the height of the sidebar */
     padding: 20px;
     width: 100%;
     background-color: #f8f8f8; /* Adjust background color as needed */
-    min-height: calc(100vh - 80px); /* Ensure it takes up the full height of the viewport minus the header */
+    min-height: calc(100vh - 60px); /* Ensure it takes up the full height of the viewport minus the header */
 }
 
 .responses {
@@ -107,4 +114,45 @@
 .responses th {
     background-color: #555;
     color: white;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001; /* Ensure modal is above everything else */
+}
+
+.modal-content {
+    background-color: #121212; /* Spotify dark background color */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: white; /* Text color */
+}
+
+.modal-content button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #1db954; /* Spotify green color */
+    color: white; /* Text color */
+}
+
+.modal-content button:hover {
+    background-color: #22b966; /* Darker shade of green on hover */
 }
