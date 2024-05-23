@@ -1,6 +1,7 @@
 // src/components/Logout.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Logout.css'; // Import the CSS file
 
 function Logout() {
   const navigate = useNavigate();

@@ -1,0 +1,41 @@
+/* src/components/Logout.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #121212; /* Dark background */
+  color: #fff; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Textured background */
+}
+
+.logout {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the form */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  width: 300px;
+  text-align: center;
+}
+
+.logout h2 {
+  margin-bottom: 20px;
+  color: #1DB954; /* Spotify green */
+}
+
+.logout button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background: #1DB954; /* Spotify green button */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.logout button:hover {
+  background: #1ed760; /* Slightly lighter green on hover */
+}
