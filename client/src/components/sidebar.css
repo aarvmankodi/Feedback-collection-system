@@ -1,4 +1,4 @@
-/* sidebar.css */
+/* src/components/sidebar.css */
 
 #sidebar {
     background-color: #121212; /* Spotify dark background color */
@@ -33,7 +33,7 @@
 }
 
 .components:hover {
-    background-color: #1db954; 
+    background-color: #1db954; /* Spotify green color */
 }
 
 .components::before {
@@ -149,10 +149,10 @@
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #1db954; 
+    background-color: #1db954; /* Spotify green color */
     color: white; /* Text color */
 }
 
 .modal-content button:hover {
-    background-color: #22b966; 
+    background-color: #22b966; /* Slightly darker green on hover */
 }

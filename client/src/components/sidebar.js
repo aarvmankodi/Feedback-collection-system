@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './sidebar.css';
 
-function Sidebar() {
+function Sidebar({ setIsAuthenticated }) {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.setItem('isAuthenticated', 'false');
+    setIsAuthenticated(false);
+    closeModal();
     navigate('/login');
   };
 
@@ -20,7 +22,6 @@ function Sidebar() {
       <div className='components' onClick={() => navigate('/')}>Dashboard</div>
       <div className='components' onClick={() => navigate('/users')}>Users</div>
       <div className='components' onClick={() => navigate('/forms')}>Forms</div>
-     
       <div className='components' onClick={openModal}>Logout</div>
 
       {showModal && (
