@@ -24,7 +24,7 @@ export default function Rating() {
     }, []);
   return (
     <div className='forms'>
-        <div className='title'>Rating Form</div>
+        <div className='title'>Ratings Form</div>
         <div className='user-entries'>
         
 

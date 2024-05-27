@@ -1,7 +1,7 @@
 /* main.css */
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Use a modern, clean font */
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
   background-color: #121212; /* Spotify dark mode background */
   color: #FFFFFF; /* Default text color in Spotify's dark mode */
   margin: 0;
@@ -15,7 +15,7 @@ body {
 .main {
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  background-color: #181818; /* Dark background color similar to Spotify */
+  background-color: #181818; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1DB954; /* Spotify's green color for the title */
+  color: #1DB954; 
   margin-bottom: 20px; /* Add some margin below the title */
 }
 
@@ -64,7 +64,7 @@ body {
 .no {
   background-color: #3E3E3E; /* Subtle no background color */
   border: 1px solid #3E3E3E; /* Dark border color */
-  border-radius: 10px; /* Add border radius for a modern look */
+  border-radius: 10px; 
   padding: 5px 10px;
   color: #FFFFFF; /* White text color for better contrast */
 }

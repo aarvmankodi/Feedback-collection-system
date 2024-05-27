@@ -5,55 +5,63 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function Users() {
-    const [verifiedUsers, setVerifiedUsers] = useState([]);
-    const [users, setUsers] = useState([]);
+    // const [verifiedUsers, setVerifiedUsers] = useState([]);
+    // const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/user-forms/all-users');
-                const updatedUsers = response.data.map(user => ({ ...user, verified: "unverified" }));
-                setUsers(updatedUsers);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get('http://localhost:3001/user-forms/all-users');
+    //             const updatedUsers = response.data.map(user => ({ ...user, verified: "" }));
+    //             setUsers(updatedUsers);
+    //             console.log("uop");
+    //         } catch (error) {
+    //             console.error('Error fetching user data:', error);
+    //         }
+    //     };
     
-        const fetchVerifiedUsers = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/user-forms/all-user-accounts');
-                setVerifiedUsers(response.data);
-            } catch (error) {
-                console.error('Error fetching verified users:', error);
-            }
-        };
+    //     const fetchVerifiedUsers = async () => {
+    //         try {
+    //             const response = await axios.get('http://localhost:3001/user-forms/all-user-accounts');
+    //             setVerifiedUsers(response.data);
+    //             console.log("dg");  
+    //         } catch (error) {
+    //             console.error('Error fetching verified users:', error);
+    //         }
+    //     };
        
+    //    fetchData();
+    //     fetchVerifiedUsers();
+        
+        
+        
+    // }, []);
+    
        
+
+    // useEffect(() => {
+    //     const updateVerifiedStatus = (verifiedUsers) => {
+    //         const updatedUsers = users.map(user => {
+    //             const isVerified = verifiedUsers.some(verifiedUser =>
+    //                 verifiedUser.name === user.name && verifiedUser.email === user.email
+    //             );
+    //             return { ...user, verified: isVerified ? "verified" : "unverified" };
+    //         });
+    //         console.log(updatedUsers);
+    //         setUsers(updatedUsers);
+    //     };
     
-        fetchData();
-        fetchVerifiedUsers();
-        
-        
-        
-    }, [verifiedUsers, users]);
-    
-    useEffect(() => {
-        const updateVerifiedStatus = (verifiedUsers) => {
-            const updatedUsers = users.map(user => {
-                const isVerified = verifiedUsers.some(verifiedUser =>
-                    verifiedUser.name === user.name && verifiedUser.email === user.email
-                );
-                return { ...user, verified: isVerified ? "verified" : "unverified" };
-            });
-            console.log(updatedUsers);
-            setUsers(updatedUsers);
-        };
-    
-        if (verifiedUsers.length > 0) {
-            updateVerifiedStatus(verifiedUsers);
-        }
-    }, [verifiedUsers, users]);
-    
+    //     if (verifiedUsers.length > 0) {
+    //         updateVerifiedStatus(verifiedUsers);
+    //     }
+    // }, [verifiedUsers]);
+
+    let users = [
+        {name : "aarv" , email : "aarvmankodi@gmail.com" , verified : "verified"},
+        {name : "aarv" , email : "aarvmankodi@gmail.com" , verified : "verified"},
+        {name : "aarv" , email : "aarvmankodikjaehjflkj@gmail.com" , verified : "verified"},
+        {name : "aarv" , email : "aarvmankodi@gmail.com" , verified : "verified"}
+    ]
     
     return (
         <div className='users'>
@@ -67,7 +75,7 @@ export default function Users() {
                             <th>Verified</th>
                             <th>Remove</th>
                         </tr>
-                    </thead></table><table>
+                    </thead>
                     <tbody>
                         {users.map((user, index) => (
                             <tr className='entry' key={index}>

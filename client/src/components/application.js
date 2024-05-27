@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import './application.css';
 
 export default function Application() {
     let users = [
@@ -10,6 +10,7 @@ export default function Application() {
         { id: 2, name: 'Jane Smith', email: 'jane@example.com', dob: '21/4/2004', address: 'home at jbp city mp', location: 'bangaluru', github: 'https://www.github.com/aarvmankodi' },
         { id: 3, name: 'Alice Johnson', email: 'alice@example.com', dob: '21/4/2004', address: 'home at jbp city mp', location: 'bangaluru', github: 'https://www.github.com/aarvmankodi' }
     ];
+
     // const [users, setUsers] = useState([]);
 
     // useEffect(() => {
@@ -41,8 +42,6 @@ export default function Application() {
                             <th>Remove</th>
                         </tr>
                     </thead>
-                </table>
-                <table>
                     <tbody>
                         {users.map((user, index) => (
                             <tr className='entry' key={index}>

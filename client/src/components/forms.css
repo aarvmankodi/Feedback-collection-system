@@ -3,26 +3,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #121212; /* Spotify dark mode background color */
-    color: #FFFFFF; /* Text color in Spotify's dark mode */
+    background-color: #121212; 
+    color: #FFFFFF; 
     padding: 20px; /* Add padding for better spacing */
     height: 100vh; /* Full viewport height */
     width: 100vw; /* Full viewport width */
-    overflow-y: auto; /* Add scrollbars if content overflows vertically */
+    overflow-y: auto; 
 }
 
-/* Adjust the .form styles */
+
 .form {
-    width: 90%; /* Set width to 90% of the parent container */
-    max-width: 400px; /* Set a maximum width for the form */
-    padding: 20px; /* Add padding for better spacing */
-    margin-bottom: 20px; /* Add margin at the bottom for spacing */
-    border-radius: 10px; /* Add border radius for a modern look */
-    background-color: #282828; /* Dark background color similar to Spotify */
+    width: 90%; 
+    max-width: 400px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    background-color: #282828; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .form:hover {
-    background-color: #383838; /* Darker background color on hover */
+    background-color: #383838; 
 }

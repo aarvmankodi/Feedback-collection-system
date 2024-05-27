@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash} from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import './feedback.css';
+
 export default function Feedback() {
-    // let users = [
-    //     { id: 1, name: 'John Doe', email: 'john@example.com', rating: 7, feedback: 'this is feedback'},
-    //     { id: 2, name: 'Jane Smith', email: 'jane@example.com', rating: 7, feedback: 'this is feedback' },
-    //     { id: 3, name: 'Alice Johnson', email: 'alice@example.com', rating: 7, feedback: 'this is feedback' }
-    //   ];
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -22,12 +19,12 @@ export default function Feedback() {
 
         fetchData();
     }, []);
-  return (
-    <div className='forms'>
-        <div className='title'>Feedback Form</div>
-        <div className='user-entries'>
-         
-        <table className=' table'>
+
+    return (
+        <div className='forms'>
+            <div className='title'>Feedback Form</div>
+            <div className='user-entries'>
+                <table className='table'>
                     <thead>
                         <tr>
                             <th className='entry-name'>Name</th>
@@ -37,23 +34,19 @@ export default function Feedback() {
                             <th>Remove</th>
                         </tr>
                     </thead>
-                    </table>
-                    <table>
                     <tbody>
                         {users.map((user, index) => (
                             <tr className='entry' key={index}>
                                 <td className='entry-name'>{user.name}</td>
                                 <td className='entry-email'>{user.email}</td>
                                 <td className='entry-rating'>{user.rating}</td>
-                                
                                 <td className='entry-feedback'>{user.feedback}</td>
                                 <td><FontAwesomeIcon icon={faTrash} /></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+            </div>
         </div>
-    </div>
-  )
+    );
 }
-
