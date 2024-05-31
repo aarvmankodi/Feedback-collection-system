@@ -1,0 +1,85 @@
+/* Signup.css */
+.signup-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #121212;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+  margin-bottom: 20px;
+}
+
+.signup-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signup-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+}
+
+.signup-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #1db954;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-container button:hover {
+  background-color: #169147;
+}
+
+.signup-container p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.dark-mode-toggle .toggle-button {
+  width: 60px;
+  height: 30px;
+  background-color: #333;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-toggle .toggle-button .circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translateX(0);
+  transition: transform 0.3s;
+}
+
+.dark-mode-toggle.dark .toggle-button {
+  background-color: #1db954;
+}
+
+.dark-mode-toggle.dark .toggle-button .circle {
+  transform: translateX(30px);
+}

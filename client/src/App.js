@@ -1,4 +1,3 @@
-// src/App.js
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
@@ -11,6 +10,8 @@ import Feedback from './components/feedback';
 import Application from './components/application';
 import Survey from './components/survey';
 import Login from './components/Login';
+import Signup from './components/signup';
+import Home from './components/home';
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('isAuthenticated') === 'true');
@@ -24,8 +25,9 @@ function App() {
         <Router>
             {isAuthenticated && <Sidebar setIsAuthenticated={setIsAuthenticated} />}
             <Routes>
-                <Route path="/" element={isAuthenticated ? <Main /> : <Navigate to="/login" />} />
+                <Route path="/" element={isAuthenticated ? <Main /> : <Home />} />
                 <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path="/users" element={isAuthenticated ? <Users /> : <Navigate to="/login" />} />
                 <Route path="/forms" element={isAuthenticated ? <Forms /> : <Navigate to="/login" />} />
                 <Route path="/forms/rating" element={isAuthenticated ? <Rating /> : <Navigate to="/login" />} />

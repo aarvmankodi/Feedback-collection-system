@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import './signup.css';
 
-function Login({ setIsAuthenticated }) {
+function Signup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
 
-    // Simulate authentication process (replace with real authentication logic)
-    if (username === 'admin' && password === 'password') {
-      localStorage.setItem('isAuthenticated', 'true');
-      setIsAuthenticated(true);
-      navigate('/');
-    } else {
-      alert('Invalid username or password');
-    }
+    // Simulate user registration (replace with real registration logic)
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+    alert('Signup successful! Please log in.');
+    navigate('/login');
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+    <div className="signup-container">
+      <h2>Sign Up</h2>
+      <form onSubmit={handleSignup}>
         <div>
           <label>Username:</label>
           <input
@@ -42,10 +39,10 @@ function Login({ setIsAuthenticated }) {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
