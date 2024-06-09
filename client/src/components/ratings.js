@@ -20,15 +20,6 @@ export default function Rating() {
         fetchData();
     }, []);
 
-    // Add sample data for visualization
-    useEffect(() => {
-        setUsers([
-            { name: 'John Doe', email: 'john@example.com', rating: 5 },
-            { name: 'Jane Smith', email: 'jane@example.com', rating: 8 },
-            { name: 'Alice Johnson', email: 'alice@example.com', rating: 7 }
-        ]);
-    }, []);
-
     return (
         <div className="forms">
             <div className="title">Ratings Form</div>
@@ -39,7 +30,7 @@ export default function Rating() {
                             <th className="entry-name">Name</th>
                             <th className="entry-email">Email</th>
                             <th className="entry-rating">Rating</th>
-                            
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,7 +39,7 @@ export default function Rating() {
                                 <td className="entry-name">{user.name}</td>
                                 <td className="entry-email">{user.email}</td>
                                 <td className="entry-rating">{user.rating}</td>
-                                
+                                <td><FontAwesomeIcon icon={faTrash} className="icon" /></td>
                             </tr>
                         ))}
                     </tbody>
