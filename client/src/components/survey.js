@@ -37,7 +37,7 @@ export default function Survey() {
                             <th className='entry-rating'>Rating 3</th>
                             <th className='entry-recommend'>Recommend</th>
                             <th className='entry-feedback'>Feedback</th>
-                            <th>Remove</th>
+                            
                         </tr>
                     </thead>
                     </table>
@@ -52,7 +52,7 @@ export default function Survey() {
                                 <td className='entry-rating'>{user.rating3}</td>
                                 <td className='entry-recommend'>{user.recommend}</td>
                                 <td className='entry-feedback'>{user.feedback}</td>
-                                <td><FontAwesomeIcon icon={faTrash} /></td>
+                                
                             </tr>
                         ))}
                     </tbody>

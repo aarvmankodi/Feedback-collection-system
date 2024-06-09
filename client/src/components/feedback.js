@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './feedback.css';
 
 export default function Feedback() {
@@ -31,7 +29,6 @@ export default function Feedback() {
                             <th className='entry-email'>Email</th>
                             <th className='entry-rating'>Rating</th>
                             <th className='entry-feedback'>Feedback</th>
-                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +38,6 @@ export default function Feedback() {
                                 <td className='entry-email'>{user.email}</td>
                                 <td className='entry-rating'>{user.rating}</td>
                                 <td className='entry-feedback'>{user.feedback}</td>
-                                <td><FontAwesomeIcon icon={faTrash} /></td>
                             </tr>
                         ))}
                     </tbody>

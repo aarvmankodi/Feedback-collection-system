@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './application.css';
 
 export default function Application() {
@@ -39,7 +37,6 @@ export default function Application() {
                             <th>Address</th>
                             <th>Work Location</th>
                             <th>Github</th>
-                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +48,6 @@ export default function Application() {
                                 <td>{user.address}</td>
                                 <td>{user.location}</td>
                                 <td><a href={user.github}>Profile</a></td>
-                                <td><FontAwesomeIcon icon={faTrash} /></td>
                             </tr>
                         ))}
                     </tbody>

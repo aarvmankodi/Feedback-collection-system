@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash} from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import './ratings.css'; // Import the CSS file
+
 export default function Rating() {
-    // let users = [
-    //     { id: 1, name: 'John Doe', email: 'john@example.com', rating: 7},
-    //     { id: 2, name: 'Jane Smith', email: 'jane@example.com', rating: 7 },
-    //     { id: 3, name: 'Alice Johnson', email: 'alice@example.com', rating: 7 }
-    //   ];
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -22,38 +19,41 @@ export default function Rating() {
 
         fetchData();
     }, []);
-  return (
-    <div className='forms'>
-        <div className='title'>Ratings Form</div>
-        <div className='user-entries'>
-        
 
-<table className=' table'>
+    // Add sample data for visualization
+    useEffect(() => {
+        setUsers([
+            { name: 'John Doe', email: 'john@example.com', rating: 5 },
+            { name: 'Jane Smith', email: 'jane@example.com', rating: 8 },
+            { name: 'Alice Johnson', email: 'alice@example.com', rating: 7 }
+        ]);
+    }, []);
+
+    return (
+        <div className="forms">
+            <div className="title">Ratings Form</div>
+            <div className="user-entries">
+                <table className="table">
                     <thead>
                         <tr>
-                            <th className='entry-name'>Name</th>
-                            <th className='entry-email'>Email</th>
-                            <th className='entry-rating'>Rating</th>
-                           
-                            <th>Remove</th>
+                            <th className="entry-name">Name</th>
+                            <th className="entry-email">Email</th>
+                            <th className="entry-rating">Rating</th>
+                            
                         </tr>
                     </thead>
-                    </table>
-                    <table>
                     <tbody>
                         {users.map((user, index) => (
-                            <tr className='entry' key={index}>
-                                <td className='entry-name'>{user.name}</td>
-                                <td className='entry-email'>{user.email}</td>
-                                <td className='entry-rating'>{user.rating}</td>
+                            <tr className="entry" key={index}>
+                                <td className="entry-name">{user.name}</td>
+                                <td className="entry-email">{user.email}</td>
+                                <td className="entry-rating">{user.rating}</td>
                                 
-                                <td><FontAwesomeIcon icon={faTrash} /></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+            </div>
         </div>
-    </div>
-  )
+    );
 }
-

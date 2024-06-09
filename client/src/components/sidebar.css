@@ -139,7 +139,7 @@
 
 .modal-content h2 {
     margin-bottom: 20px;
-    color: white; /* Text color */
+    color: white; 
 }
 
 .modal-content button {
@@ -149,10 +149,10 @@
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #1db954; /* Spotify green color */
-    color: white; /* Text color */
+    background-color: #1db954; 
+    color: white; 
 }
 
 .modal-content button:hover {
-    background-color: #22b966; /* Slightly darker green on hover */
+    background-color: #22b966; 
 }

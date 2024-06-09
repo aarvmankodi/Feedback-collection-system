@@ -20,7 +20,7 @@ function Sidebar({ setIsAuthenticated }) {
     localStorage.setItem('isAuthenticated', 'false');
     setIsAuthenticated(false);
     closeModal();
-    navigate('/login');
+    navigate('/'); // Redirect to the homepage
   };
 
   const openModal = () => setShowModal(true);

@@ -23,18 +23,28 @@ function App() {
 
     return (
         <Router>
-            {isAuthenticated && <Sidebar setIsAuthenticated={setIsAuthenticated} />}
-            <Routes>
-                <Route path="/" element={isAuthenticated ? <Main /> : <Home />} />
-                <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/users" element={isAuthenticated ? <Users /> : <Navigate to="/login" />} />
-                <Route path="/forms" element={isAuthenticated ? <Forms /> : <Navigate to="/login" />} />
-                <Route path="/forms/rating" element={isAuthenticated ? <Rating /> : <Navigate to="/login" />} />
-                <Route path="/forms/application" element={isAuthenticated ? <Application /> : <Navigate to="/login" />} />
-                <Route path="/forms/feedback" element={isAuthenticated ? <Feedback /> : <Navigate to="/login" />} />
-                <Route path="/forms/survey" element={isAuthenticated ? <Survey /> : <Navigate to="/login" />} />
-            </Routes>
+            {isAuthenticated ? (
+                <>
+                    <Sidebar setIsAuthenticated={setIsAuthenticated} />
+                    <Routes>
+                        <Route path="/" element={<Main />} />
+                        <Route path="/users" element={<Users />} />
+                        <Route path="/forms" element={<Forms />} />
+                        <Route path="/forms/rating" element={<Rating />} />
+                        <Route path="/forms/application" element={<Application />} />
+                        <Route path="/forms/feedback" element={<Feedback />} />
+                        <Route path="/forms/survey" element={<Survey />} />
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </Routes>
+                </>
+            ) : (
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="*" element={<Navigate to="/" />} />
+                </Routes>
+            )}
         </Router>
     );
 }
