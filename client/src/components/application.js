@@ -3,26 +3,20 @@ import axios from 'axios';
 import './application.css';
 
 export default function Application() {
-    let users = [
-        { id: 1, name: 'John Doe', email: 'john@example.com', dob: '21/4/2004', address: 'home at jbp city mp', location: 'bangaluru', github: 'https://www.github.com/aarvmankodi' },
-        { id: 2, name: 'Jane Smith', email: 'jane@example.com', dob: '21/4/2004', address: 'home at jbp city mp', location: 'bangaluru', github: 'https://www.github.com/aarvmankodi' },
-        { id: 3, name: 'Alice Johnson', email: 'alice@example.com', dob: '21/4/2004', address: 'home at jbp city mp', location: 'bangaluru', github: 'https://www.github.com/aarvmankodi' }
-    ];
+    const [users, setUsers] = useState([]);
 
-    // const [users, setUsers] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3001/user-forms/formB');
+                setUsers(response.data);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await axios.get('http://localhost:3001/user-forms/formB');
-    //             setUsers(response.data);
-    //         } catch (error) {
-    //             console.error('Error fetching user data:', error);
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, []);
+        fetchData();
+    }, []);
 
     return (
         <div className='forms'>
