@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #121212; 
-  color: #FFFFFF; 
-  padding: 20px; 
-  height: 100vh; 
-  width: 100vw; 
-  overflow-y: auto; 
+  background-color: #121212;
+  color: #FFFFFF;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
 }
 
 .title {
@@ -17,7 +17,7 @@
 }
 
 .user-entries {
-  width: 90%; 
+  width: 90%;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem; /* Add margin between thead and tbody tables */
+  margin-bottom: 1rem;
 }
 
 .table th,
@@ -54,6 +54,15 @@
 
 .table tbody tr:hover {
   background-color: #383838;
+}
+
+.entry td {
+  vertical-align: middle;
+}
+
+.entry th,
+.entry-remove {
+  text-align: center;
 }
 
 .entry td:last-child {
