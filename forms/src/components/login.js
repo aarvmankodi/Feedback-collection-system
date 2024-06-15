@@ -31,10 +31,20 @@ function Login() {
     document.cookie = "loginStatus=failed; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
     if (action === 'Login'){
       try {
+        console.log(formData.email);
         const response = await axios.post('http://localhost:3001/login', formData);
         if (response.status === 200) {
-          // If login is successful, display a success message to the user
+          console.log("gggg" , response)
           document.cookie = "loginStatus=success; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
+          document.cookie = `UserEmail=${formData.email}; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/`;
+          let date = new Date();
+        const message = {
+        msg:  `User ${formData.email} logged in`,
+        date: date,
+        type : 'notification'
+        };
+
+        await axios.post('http://localhost:3001/user-forms/history', { message });
           navigate("/forms");
           // You can redirect the user to another page here if needed
         } else {

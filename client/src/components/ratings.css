@@ -1,4 +1,4 @@
-.ratings {
+/* .ratings {
   width: 100vw;
   height: 100vh;
   background-color: #121212;
@@ -8,9 +8,13 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 20px; /* Adjust padding for better spacing */
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
+} */
+
+
+
+
 
 .title {
   font-size: 2rem;
@@ -24,6 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .table {

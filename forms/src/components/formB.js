@@ -50,9 +50,15 @@ function FormB() {
         // Send POST request to backend API endpoint
         await axios.post('http://localhost:3001/user-forms', formData);
         // toast.success('Form submitted successfully');
-        toast.success('Form submitted successfully'); // Display success toast
-        // Clear form data after submitting
-      //   setFormData({ name: '', rating: '' });
+        toast.success('Form submitted successfully'); 
+        let date = new Date();
+        const message = {
+        msg:  ` User ${formData.name} submitted application form`,
+        date: date,
+        type : 'activity'
+        };
+
+        await axios.post('http://localhost:3001/user-forms/history', { message });
       } catch (error) {
         console.error('Error submitting form:', error);
         toast.error('Failed to submit form');

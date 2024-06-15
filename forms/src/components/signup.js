@@ -51,7 +51,14 @@ function SignUp() {
 
           await axios.post('http://localhost:3001/user-forms', formData);
           toast.success('New User Added');
-          
+          let date = new Date();
+          const message = {
+          msg:  `New User ${formData.name} signed in`,
+          date: date,
+          type : 'notification'
+          };
+
+          await axios.post('http://localhost:3001/user-forms/history', { message });
         } catch (error) {
           console.error('Error submitting form:', error);
           toast.error('Failed to submit form');

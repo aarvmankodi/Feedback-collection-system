@@ -7,18 +7,34 @@ import './ratings.css'; // Import the CSS file
 export default function Rating() {
     const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/user-forms/formA');
-                setUsers(response.data);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-            }
-        };
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:3001/user-forms/formA');
+            setUsers(response.data);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+        }
+    };
 
+    useEffect(() => {
+        
         fetchData();
     }, []);
+
+    const deleteEntry = async (user) =>{
+        try{
+            console.log(user , "aaa")
+            const res = await axios.post("http://localhost:3001/delete" , {user , form :'form A'});
+            console.log(res.data)
+            if (res.status === 200)
+                {
+                    
+                    fetchData();
+                }
+        }catch(e){
+            console.log(e);
+        }
+    }
 
     return (
         <div className="forms">
@@ -39,7 +55,7 @@ export default function Rating() {
                                 <td className="entry-name">{user.name}</td>
                                 <td className="entry-email">{user.email}</td>
                                 <td className="entry-rating">{user.rating}</td>
-                                <td><FontAwesomeIcon icon={faTrash} className="icon" /></td>
+                                <td><FontAwesomeIcon icon={faTrash} className="icon"  onClick={() => deleteEntry(user)}/></td>
                             </tr>
                         ))}
                     </tbody>

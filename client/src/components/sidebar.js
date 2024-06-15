@@ -6,29 +6,30 @@ function Sidebar({ setIsAuthenticated }) {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  const isAuthenticated = () => localStorage.getItem('isAuthenticated') === 'true';
+  // const isAuthenticated = () => localStorage.getItem('isAuthenticated') === 'true';
 
   const handleNavigation = (path) => {
-    if (isAuthenticated()) {
+     {
       navigate(path);
-    } else {
-      navigate('/login');
     }
   };
 
   const handleLogout = () => {
-    localStorage.setItem('isAuthenticated', 'false');
-    setIsAuthenticated(false);
+    // localStorage.setItem('isAuthenticated', 'false');
+    // setIsAuthenticated(false);
     closeModal();
     navigate('/'); // Redirect to the homepage
   };
 
-  const openModal = () => setShowModal(true);
+  const openModal = () => {
+    setShowModal(true);
+  }
+  
   const closeModal = () => setShowModal(false);
 
   return (
     <div id='sidebar'>
-      <div className='components' onClick={() => handleNavigation('/')}>Dashboard</div>
+      <div className='components' onClick={() => handleNavigation('/main')}>Dashboard</div>
       <div className='components' onClick={() => handleNavigation('/users')}>Users</div>
       <div className='components' onClick={() => handleNavigation('/forms')}>Forms</div>
       <div className='components' onClick={openModal}>Logout</div>

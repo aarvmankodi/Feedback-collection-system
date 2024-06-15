@@ -3,67 +3,52 @@ import axios from 'axios';
 import './users.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import Sidebar from './sidebar';
 
 export default function Users() {
-    // const [verifiedUsers, setVerifiedUsers] = useState([]);
-    // const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await axios.get('http://localhost:3001/user-forms/all-users');
-    //             const updatedUsers = response.data.map(user => ({ ...user, verified: "" }));
-    //             setUsers(updatedUsers);
-    //             console.log("uop");
-    //         } catch (error) {
-    //             console.error('Error fetching user data:', error);
-    //         }
-    //     };
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:3001/user-forms/all-users');
+            console.log("ggg" , response.data)
+            const updatedUsers = response.data.map(user => ({ ...user, verified: "" }));
+            setUsers(updatedUsers);
+            console.log("fff" , users);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+        }
+    };
+    useEffect(() => {
+        
     
-    //     const fetchVerifiedUsers = async () => {
-    //         try {
-    //             const response = await axios.get('http://localhost:3001/user-forms/all-user-accounts');
-    //             setVerifiedUsers(response.data);
-    //             console.log("dg");  
-    //         } catch (error) {
-    //             console.error('Error fetching verified users:', error);
-    //         }
-    //     };
-       
-    //    fetchData();
-    //     fetchVerifiedUsers();
+        
+       fetchData();
         
         
         
-    // }, []);
+    }, []);
     
-       
+    const deleteEntry = async (user) =>{
+        try{
+            console.log(user , "aaa")
+            const res = await axios.post("http://localhost:3001/delete" , {user , form :'Accounts'});
+            console.log(res.data)
+            if (res.status === 200)
+                {
+                    
+                    fetchData();
+                }
+        }catch(e){
+            console.log(e);
+        }
+    }
 
-    // useEffect(() => {
-    //     const updateVerifiedStatus = (verifiedUsers) => {
-    //         const updatedUsers = users.map(user => {
-    //             const isVerified = verifiedUsers.some(verifiedUser =>
-    //                 verifiedUser.name === user.name && verifiedUser.email === user.email
-    //             );
-    //             return { ...user, verified: isVerified ? "verified" : "unverified" };
-    //         });
-    //         console.log(updatedUsers);
-    //         setUsers(updatedUsers);
-    //     };
     
-    //     if (verifiedUsers.length > 0) {
-    //         updateVerifiedStatus(verifiedUsers);
-    //     }
-    // }, [verifiedUsers]);
-
-    let users = [
-        {name : "aarv" , email : "aarvmankodi@gmail.com" , verified : "verified"},
-        {name : "aarv" , email : "aarvmankodi@gmail.com" , verified : "verified"},
-        {name : "aarv" , email : "aarvmankodikjaehjflkj@gmail.com" , verified : "verified"},
-        {name : "aarv" , email : "aarvmankodi@gmail.com" , verified : "verified"}
-    ]
     
     return (
+        <>
+        <Sidebar/>
         <div className='users'>
             <div className='title'>Users</div>
             <div className='user-entries'>
@@ -72,7 +57,6 @@ export default function Users() {
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Verified</th>
                             <th>Remove</th>
                         </tr>
                     </thead>
@@ -81,13 +65,14 @@ export default function Users() {
                             <tr className='entry' key={index}>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.verified}</td>
-                                <td><FontAwesomeIcon icon={faTrash} /></td>
+                                <td><FontAwesomeIcon icon={faTrash} className="icon"  onClick={() => deleteEntry(user)}/></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
         </div>
+        </>
+        
     );
 }

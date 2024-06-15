@@ -1,6 +1,7 @@
 import React from 'react';
 import './forms.css';
 import { useNavigate } from 'react-router-dom';
+import Sidebar from './sidebar';
 
 
 export default function Forms() {
@@ -10,6 +11,8 @@ export default function Forms() {
         navigate(`./${name}`)
     }
   return (
+    <>
+    <Sidebar/>
     <div className='forms'>
         <div className='title'>
             Forms
@@ -28,5 +31,7 @@ export default function Forms() {
             }}>Survey Form</div>
 
     </div>
+    </>
+    
   )
 }
