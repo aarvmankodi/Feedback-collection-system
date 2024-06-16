@@ -50,7 +50,7 @@ function Login() {
     document.cookie = "loginStatus=failed; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
     
       try {
-        console.log(formData.email);
+        console.log("dfddd" , formData.email);
         const response = await axios.post('http://localhost:3001/user-forms', formData);
         if (response.status === 200) {
           console.log("gggg" , response)
@@ -59,6 +59,8 @@ function Login() {
           
           navigate("/main");
           // You can redirect the user to another page here if needed
+        }else if (response.status === 218){
+          toast.error("User already exists");
         } else {
           toast.error('User not Found');
         }

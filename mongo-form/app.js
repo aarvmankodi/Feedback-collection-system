@@ -112,7 +112,15 @@ app.post('/user-forms', async (req,res) => {
     const { form ,name, rating, rating2, rating3, email, dob, address, location, github, feedback, reference, recommend, password } = req.body;
     if (form === 'Account'){
         const hashedPassword = await bcrypt.hash(password, 10);
-        db.collection('Accounts')
+        const existingUser = await db.collection('Accounts').findOne({$or: [
+            { email: email },
+            { name: name }
+        ]})
+        console.log("gggggggg" , existingUser)
+        if (existingUser){
+            res.status(218).json({message : "Sorry but user already exists"});
+        } else {
+            db.collection('Accounts')
         .insertOne(
           
             { name: name,email: email, password: hashedPassword } , 
@@ -120,29 +128,36 @@ app.post('/user-forms', async (req,res) => {
         )
         .then(result => {
             console.log(result)
-            res.status(201).json({message : "User registered successfully"}); 
+            res.status(200).json({message : "User registered successfully"}); 
         })
         .catch(err => {
             console.log(err)
             res.status(500).json({ err: "Could not create/update user" });
         });
+        }
+        
     }
 
     else if (form === 'Account-client'){
         const hashedPassword = await bcrypt.hash(password, 10);
-        db.collection('Account-client')
-        .insertOne(
-          
-            { name: name, password: hashedPassword } , 
-            { upsert: true } 
-        )
-        .then(result => {
-            res.status(200).json({message : "User registered successfully"}); 
-        })
-        .catch(err => {
-            res.status(500).json({ err: "Could not create/update user" });
-        });
-    }
+        const existingUser = await db.collection('Account-client').findOne({ name: name });
+        if (existingUser){
+            res.status(218).json({message : "Sorry but user already exists"});
+        } else {
+            db.collection('Account-client')
+            .insertOne(
+            
+                { name: name, password: hashedPassword } , 
+                { upsert: true } 
+            )
+            .then(result => {
+                res.status(200).json({message : "User registered successfully"}); 
+            })
+            .catch(err => {
+                res.status(500).json({ err: "Could not create/update user" });
+            });
+        }
+    }   
 
     else if (form === 'A'){
         db.collection('form A')
@@ -267,7 +282,7 @@ app.post('/user-forms/history' , async (req,res) => {
             type : message.type,
             createdAt : message.date
         }).then(result => {
-            res.status(201).json(result); 
+            res.status(200).json(result); 
         })
         .catch(err => {
             res.status(500).json({ err: "couldnt add history" });

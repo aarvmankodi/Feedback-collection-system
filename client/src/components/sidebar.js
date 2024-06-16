@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './sidebar.css';
 
-function Sidebar({ setIsAuthenticated }) {
+function Sidebar() {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 

@@ -1,17 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './home.css';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const navToLogin = () => {
+    navigate("/login")
+  }
   return (
     <div className="container">
       <h2>Welcome</h2>
-      <Link to="/login">
-        <button className="button">Login</button>
-      </Link>
-      <Link to="/login">
-        <button className="button">Sign Up</button>
-      </Link>
+      
+        <button onClick={navToLogin} className="button">Login</button>
+      
+        <button onClick={navToLogin} className="button">Sign Up</button>
+      
     </div>
   );
 };

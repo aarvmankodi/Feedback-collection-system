@@ -3,7 +3,6 @@ import axios from 'axios';
 import './application.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import Sidebar from './sidebar';
 
 export default function Application() {
     const [users, setUsers] = useState([]);

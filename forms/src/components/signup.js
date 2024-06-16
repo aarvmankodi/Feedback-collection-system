@@ -49,16 +49,30 @@ function SignUp() {
       if (password1 === password2 && password1!== ''){
         try {
 
-          await axios.post('http://localhost:3001/user-forms', formData);
-          toast.success('New User Added');
-          let date = new Date();
-          const message = {
-          msg:  `New User ${formData.name} signed in`,
-          date: date,
-          type : 'notification'
-          };
-
-          await axios.post('http://localhost:3001/user-forms/history', { message });
+          const response = await axios.post('http://localhost:3001/user-forms', formData);
+          console.log(response)
+          if (response.status === 200) {
+            let date = new Date();
+            const message = {
+              msg:  `New User ${formData.name} signed in`,
+              date: date,
+              type : 'notification'
+            };
+            const res = await axios.post('http://localhost:3001/user-forms/history', { message });
+            if (res.status === 200){
+              toast.success("New user added")
+            document.cookie = "loginStatus=success; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
+            
+            }else{
+              toast.error("could not add user");
+            }
+          }else if (response.status === 218){
+            toast.error("user already exists");
+          }
+          
+          else{
+            toast.error("login error");
+          }
         } catch (error) {
           console.error('Error submitting form:', error);
           toast.error('Failed to submit form');

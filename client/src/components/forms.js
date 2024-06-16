@@ -7,9 +7,7 @@ import Sidebar from './sidebar';
 export default function Forms() {
     const navigate = useNavigate();
 
-    const Redirect = (name) => {
-        navigate(`./${name}`)
-    }
+    
   return (
     <>
     <Sidebar/>
